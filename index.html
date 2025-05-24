@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Produk - BACA DULU ❤️</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 500px; margin: auto; }
+    h1 { text-align: center; color: #e91e63; }
+    input { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px; }
+    .produk { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 8px; }
+    .produk img { width: 100%; border-radius: 6px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <h1>BACA DULU ❤️</h1>
+  <input type="text" id="search" placeholder="Cari produk berdasarkan kode...">
+
+  <div class="produk" data-kode="345">
+    <img src="https://via.placeholder.com/400x300?text=Produk+345" alt="Produk 345">
+    <p><strong>Produk 345</strong></p>
+    <a href="#">Lihat di Shopee</a>
+  </div>
+
+  <div class="produk" data-kode="498">
+    <img src="https://via.placeholder.com/400x300?text=Produk+498" alt="Produk 498">
+    <p><strong>Produk 498</strong></p>
+    <a href="#">Lihat di Shopee</a>
+  </div>
+
+  <div class="produk" data-kode="721">
+    <img src="https://via.placeholder.com/400x300?text=Produk+721" alt="Produk 721">
+    <p><strong>Produk 721</strong></p>
+    <a href="#">Lihat di Shopee</a>
+  </div>
+
+  <script>
+    const input = document.getElementById('search');
+    const produkList = document.querySelectorAll('.produk');
+
+    input.addEventListener('input', function () {
+      const keyword = this.value.trim();
+      produkList.forEach(produk => {
+        if (produk.dataset.kode.includes(keyword)) {
+          produk.classList.remove('hidden');
+        } else {
+          produk.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

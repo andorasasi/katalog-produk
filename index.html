@@ -1,57 +1,93 @@
-
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katalog Produk - IMMELDA JELEK KAYA BEBEK 😜😜😜</title>
+  <title>Katalog ShopeeHaul</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; max-width: 500px; margin: auto; }
-    h1 { text-align: center; color: #e91e63; }
-    input { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px; }
-    .produk { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 8px; }
-    .produk img { width: 100%; border-radius: 6px; }
-    .hidden { display: none; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f2f2f2;
+    }
+    header {
+      background: black;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      padding: 1em;
+      background: #000;
+      color: #fff;
+    }
+    .profile img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-right: 1em;
+    }
+    .search-bar {
+      padding: 1em;
+      text-align: center;
+    }
+    .search-bar input {
+      width: 90%;
+      padding: 0.5em;
+      font-size: 1em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1em;
+      padding: 1em;
+    }
+    .product {
+      background: #fff;
+      padding: 0.5em;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .code {
+      margin-top: 0.5em;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-
-  <h1>MELDA JELEK KAYA BEBEK 😜😜😜</h1>
-  <input type="text" id="search" placeholder="Cari produk berdasarkan kode...">
-
-  <div class="produk" data-kode="345">
-    <img src="https://via.placeholder.com/400x300?text=Produk+345" alt="Produk 345">
-    <p><strong>Produk 345</strong></p>
-    <a href="#">Lihat di Shopee</a>
+  <header>
+    <h1>Link Shopee Haul</h1>
+  </header>  <div class="profile">
+    <img src="https://via.placeholder.com/48" alt="Profile">
+    <div>
+      <strong>BACA DULU ❤️</strong><br>
+      Biar cepet, cari di bagian atas. Ketik misal: 345, abistu enter.
+    </div>
+  </div>  <div class="search-bar">
+    <input type="text" placeholder="Cari Link">
+  </div>  <div class="grid">
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="Produk">
+      <div class="code">499</div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="Produk">
+      <div class="code">498</div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="Produk">
+      <div class="code">497</div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400" alt="Produk">
+      <div class="code">497</div>
+    </div>
   </div>
-
-  <div class="produk" data-kode="498">
-    <img src="https://via.placeholder.com/400x300?text=Produk+498" alt="Produk 498">
-    <p><strong>Produk 498</strong></p>
-    <a href="#">Lihat di Shopee</a>
-  </div>
-
-  <div class="produk" data-kode="721">
-    <img src="https://via.placeholder.com/400x300?text=Produk+721" alt="Produk 721">
-    <p><strong>Produk 721</strong></p>
-    <a href="#">Lihat di Shopee</a>
-  </div>
-
-  <script>
-    const input = document.getElementById('search');
-    const produkList = document.querySelectorAll('.produk');
-
-    input.addEventListener('input', function () {
-      const keyword = this.value.trim();
-      produkList.forEach(produk => {
-        if (produk.dataset.kode.includes(keyword)) {
-          produk.classList.remove('hidden');
-        } else {
-          produk.classList.add('hidden');
-        }
-      });
-    });
-  </script>
-
 </body>
 </html>

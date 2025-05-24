@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Katalog ShopeeHaul</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f2f2f2;
+      background: #000;
+      color: white;
+      overflow-x: hidden;
     }
     header {
       background: black;
@@ -36,8 +42,8 @@
     }
     .search-container {
       position: relative;
-      width: 80%;
-      max-width: 400px;
+      width: 70%;
+      max-width: 350px;
       margin: 0 auto;
     }
     .search-icon {
@@ -61,7 +67,7 @@
       padding: 1em;
     }
     .product {
-      background: #fff;
+      background: #1a1a1a;
       padding: 0.5em;
       border-radius: 8px;
       text-align: center;
@@ -74,7 +80,7 @@
     .code {
       margin-top: 0.5em;
       font-weight: bold;
-      color: #000;
+      color: #fff;
     }
   </style>
 </head>
@@ -84,9 +90,9 @@
   </header>
 
   <div class="profile">
-    <img src="https://via.placeholder.com/48" alt="Profile">
+    <img src="https://via.placeholder.com/48" alt="Profile" />
     <div>
-      <strong>BACA DULU ❤️</strong><br>
+      <strong>BACA DULU ❤️</strong><br />
       Biar cepet, cari di bagian atas. Ketik misal: 345, abistu enter.
     </div>
   </div>
@@ -103,25 +109,25 @@
   <div class="grid">
     <div class="product">
       <a href="https://shopee.co.id/example-product-499" target="_blank">
-        <img src="https://via.placeholder.com/300x400" alt="Produk">
+        <img src="https://via.placeholder.com/300x400" alt="Produk" />
         <div class="code">499</div>
       </a>
     </div>
     <div class="product">
       <a href="https://shopee.co.id/example-product-498" target="_blank">
-        <img src="https://via.placeholder.com/300x400" alt="Produk">
+        <img src="https://via.placeholder.com/300x400" alt="Produk" />
         <div class="code">498</div>
       </a>
     </div>
     <div class="product">
       <a href="https://shopee.co.id/example-product-497" target="_blank">
-        <img src="https://via.placeholder.com/300x400" alt="Produk">
+        <img src="https://via.placeholder.com/300x400" alt="Produk" />
         <div class="code">497</div>
       </a>
     </div>
     <div class="product">
       <a href="https://shopee.co.id/example-product-496" target="_blank">
-        <img src="https://via.placeholder.com/300x400" alt="Produk">
+        <img src="https://via.placeholder.com/300x400" alt="Produk" />
         <div class="code">496</div>
       </a>
     </div>
@@ -133,18 +139,11 @@
 
     searchInput.addEventListener('input', function() {
       const query = this.value.trim().toLowerCase();
-
       products.forEach(product => {
         const code = product.querySelector('.code').textContent.toLowerCase();
-        if (code.includes(query)) {
-          product.style.display = '';
-        } else {
-          product.style.display = 'none';
-        }
+        product.style.display = code.includes(query) ? '' : 'none';
       });
     });
   </script>
 </body>
 </html>
-
-
